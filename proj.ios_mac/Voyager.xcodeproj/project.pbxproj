@@ -67,6 +67,9 @@
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
+		F205F6BF1847B06B004AB580 /* line_side_slim.png in Resources */ = {isa = PBXBuildFile; fileRef = F205F6BE1847B06B004AB580 /* line_side_slim.png */; };
+		F205F6C11847B095004AB580 /* PrologueScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = F205F6C01847B095004AB580 /* PrologueScene.ccbi */; };
+		F254DE691845078E00D4E384 /* PrologueScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F254DE681845078E00D4E384 /* PrologueScene.cpp */; };
 		F266334018371FC700C1231A /* bg-foot.png in Resources */ = {isa = PBXBuildFile; fileRef = F266333618371FC700C1231A /* bg-foot.png */; };
 		F266334118371FC700C1231A /* bg-head.png in Resources */ = {isa = PBXBuildFile; fileRef = F266333718371FC700C1231A /* bg-head.png */; };
 		F266334218371FC700C1231A /* bg-star.png in Resources */ = {isa = PBXBuildFile; fileRef = F266333818371FC700C1231A /* bg-star.png */; };
@@ -302,6 +305,10 @@
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F205F6BE1847B06B004AB580 /* line_side_slim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line_side_slim.png; sourceTree = "<group>"; };
+		F205F6C01847B095004AB580 /* PrologueScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = PrologueScene.ccbi; sourceTree = "<group>"; };
+		F254DE611845071800D4E384 /* PrologueScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrologueScene.h; path = ../Classes/PrologueScene.h; sourceTree = "<group>"; };
+		F254DE681845078E00D4E384 /* PrologueScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PrologueScene.cpp; path = ../Classes/PrologueScene.cpp; sourceTree = "<group>"; };
 		F266333618371FC700C1231A /* bg-foot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-foot.png"; sourceTree = "<group>"; };
 		F266333718371FC700C1231A /* bg-head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-head.png"; sourceTree = "<group>"; };
 		F266333818371FC700C1231A /* bg-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-star.png"; sourceTree = "<group>"; };
@@ -386,6 +393,8 @@
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				1AFAF8B516D35DE700DB1158 /* Voyager.cpp */,
 				1AFAF8B616D35DE700DB1158 /* Voyager.h */,
+				F254DE611845071800D4E384 /* PrologueScene.h */,
+				F254DE681845078E00D4E384 /* PrologueScene.cpp */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -504,12 +513,30 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F205F6BC1847B010004AB580 /* ccbi */,
 				F266333518371FC700C1231A /* img */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
 				1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */,
 			);
 			name = Resources;
 			path = ../Resources;
+			sourceTree = "<group>";
+		};
+		F205F6BC1847B010004AB580 /* ccbi */ = {
+			isa = PBXGroup;
+			children = (
+				F205F6C01847B095004AB580 /* PrologueScene.ccbi */,
+				F205F6BD1847B06B004AB580 /* ccbResources */,
+			);
+			path = ccbi;
+			sourceTree = "<group>";
+		};
+		F205F6BD1847B06B004AB580 /* ccbResources */ = {
+			isa = PBXGroup;
+			children = (
+				F205F6BE1847B06B004AB580 /* line_side_slim.png */,
+			);
+			path = ccbResources;
 			sourceTree = "<group>";
 		};
 		F266333518371FC700C1231A /* img */ = {
@@ -724,6 +751,7 @@
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				F266334318371FC700C1231A /* btn-map.png in Resources */,
+				F205F6C11847B095004AB580 /* PrologueScene.ccbi in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				F266334418371FC700C1231A /* btn-memory.png in Resources */,
 				F266334518371FC700C1231A /* chara-voyager-good.png in Resources */,
@@ -734,6 +762,7 @@
 				F266334818371FC700C1231A /* ic.png in Resources */,
 				F266334218371FC700C1231A /* bg-star.png in Resources */,
 				F266334618371FC700C1231A /* chara-voyager-sad.png in Resources */,
+				F205F6BF1847B06B004AB580 /* line_side_slim.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				F266334018371FC700C1231A /* bg-foot.png in Resources */,
@@ -771,6 +800,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F254DE691845078E00D4E384 /* PrologueScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,

@@ -1,6 +1,13 @@
 #include "Voyager.h"
+#include "CCBReader/CCBReader.h"
+#include "CCBReader/CCNodeLoaderLibrary.h"
+#include "SimpleAudioEngine.h"
+#include "PrologueScene.h"
 
+
+USING_NS_CC_EXT;
 USING_NS_CC;
+using namespace CocosDenshion;
 
 Scene* Opening::createScene()
 {
@@ -89,8 +96,10 @@ bool Opening::init()
 void Opening::menuCloseCallback(Object* pSender)
 {
     Director::getInstance()->end();
-
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    exit(0);
-#endif
+    CCLOG("TitleScene::onTouchBegan()");
+    auto scene = PrologueScene::createScene();
+    log("transition to prologue scene");
+    // 0.5秒かけてブラックアウトしてプロローグに移動する
+    auto fade = TransitionFade::create(5, scene, Color3B::BLACK);
+    Director::getInstance()->replaceScene(fade);
 }
