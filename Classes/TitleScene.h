@@ -3,7 +3,7 @@
 
 #include "cocos2d.h"
 
-class Opening : public cocos2d::Layer
+class TitleScene : public cocos2d::Layer
 {
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
@@ -16,7 +16,7 @@ public:
     void menuCloseCallback(Object* pSender);
     
     // implement the "static create()" method manually
-    CREATE_FUNC(Opening);
+    CREATE_FUNC(TitleScene);
 };
 
 #endif // __HELLOWORLD_SCENE_H__

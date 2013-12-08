@@ -21,12 +21,11 @@ PrologueScene::PrologueScene()
 , _messageTTF(nullptr)
 , _animationManager(nullptr)
 {
-    // こっちで初期化するより上のコロンで繋げて書いている方が余計な処理が入らない分軽くなる>そう
 }
 
 PrologueScene::~PrologueScene()
 {
-    CCLOG("Prologue::~Prologue()");
+    log("Prologue::~Prologue()");
     if (_messageArray != nullptr)
     {
         _messageArray->removeAllObjects();
@@ -43,25 +42,26 @@ Scene* PrologueScene::createScene()
     // プロローグシーンのローダーを追加
     nodeLoaderLibrary->registerNodeLoader("PrologueScene", PrologueSceneLoader::loader());
     CCBReader* reader = new CCBReader(nodeLoaderLibrary);
+    log("reading Prologue ccbi");
     // プロローグのccbiファイルを読み込む
     auto prologueNode = reader->readNodeGraphFromFile("PrologueScene.ccbi");
     // アニメーションマネージャーをセットする
     static_cast<PrologueScene*>(prologueNode)->setAnimationManager(reader->getAnimationManager());
+    log("here is passed l:50");
     scene->addChild(prologueNode);
     // 開放
     reader->release();
     
+    log("returning scene");
     return scene;
 }
 bool PrologueScene::init()
 {
-    CCLOG("PrologueScene::init()");
+    log("PrologueScene::init()");
     if ( !Layer::init() )
     {
         return false;
     }
-    
-    // BGM・SEのプリロード
     
     // プロローグの内容をセットする
     _messageArray = Array::create(
@@ -85,7 +85,7 @@ bool PrologueScene::init()
 
 void PrologueScene::onEnterTransitionDidFinish()
 {
-    CCLOG("PrologueScene::onEnterTransitionDidFinish()");
+    log("PrologueScene::onEnterTransitionDidFinish()");
     Layer::onEnterTransitionDidFinish();
     
     animationStart();
@@ -93,10 +93,9 @@ void PrologueScene::onEnterTransitionDidFinish()
 
 bool PrologueScene::onTouchBegan(Touch *touch, Event *event)
 {
-    CCLOG("PrologueScene::onTouchBegan()");
+    log("PrologueScene::onTouchBegan()");
     switch (_state)
     {
-            // 開始アニメーションが終了していれば開始の終了アニメーションを再生
         case State_StartAnimationEnd:
             animationStartEnd();
             break;
@@ -123,20 +122,20 @@ bool PrologueScene::onTouchBegan(Touch *touch, Event *event)
 
 void PrologueScene::animationStart()
 {
-    CCLOG("PrologueScene::animationStart()");
+    log("PrologueScene::animationStart()");
     _animationManager->runAnimationsForSequenceNamedTweenDuration("Start", 0.0f);
 }
 
 void PrologueScene::animationStartEnd()
 {
-    CCLOG("PrologueScene::animationStartEnd()");
+    log("PrologueScene::animationStartEnd()");
     _state = State_TouchIgnore;
     _animationManager->runAnimationsForSequenceNamedTweenDuration("StartEnd", 0.0f);
 }
 
 void PrologueScene::animationTextStart()
 {
-    CCLOG("PrologueScene::animationTextStart()");
+    log("PrologueScene::animationTextStart()");
     _state = State_TextStartAnimation;
     // メッセージを更新してから表示する
     String* message = static_cast<String*>(_messageArray->getObjectAtIndex(_messageIndex));
@@ -154,7 +153,7 @@ void PrologueScene::animationTextStart()
 }
 void PrologueScene::animationTextEnd()
 {
-    CCLOG("PrologueScene::animationTextEnd()");
+    log("PrologueScene::animationTextEnd()");
     _state = State_TextEndAnimation;
     _animationManager->runAnimationsForSequenceNamedTweenDuration("TextEnd", 0.0f);
 }
@@ -162,7 +161,7 @@ void PrologueScene::animationTextEnd()
 
 bool PrologueScene::onAssignCCBMemberVariable(Object* pTarget, const char* pMemberVariableName, Node* pNode)
 {
-    CCLOG("onAssignCCBMember: %s", pMemberVariableName);
+    log("onAssignCCBMember: %s", pMemberVariableName);
     CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "m_messageTTF", LabelTTF*, _messageTTF);
     
     return true;
@@ -170,7 +169,7 @@ bool PrologueScene::onAssignCCBMemberVariable(Object* pTarget, const char* pMemb
 
 void PrologueScene::setAnimationManager(CCBAnimationManager *pAnimationManager)
 {
-    CCLOG("PrologueScene::setAnimationManager()");
+    log("PrologueScene::setAnimationManager()");
     CC_SAFE_RELEASE_NULL(_animationManager);
     _animationManager = pAnimationManager;
     CC_SAFE_RETAIN(_animationManager);
@@ -180,7 +179,7 @@ void PrologueScene::setAnimationManager(CCBAnimationManager *pAnimationManager)
 
 void PrologueScene::completedAnimationSequenceNamed(const char *name)
 {
-    CCLOG("completedAnimation: %s", name);
+    log("completedAnimation: %s", name);
     // タイムラインの名前によって処理を分ける。必要のあるものだけ指定する
     if(strcmp(name,"Start") == 0)
     {
@@ -203,6 +202,11 @@ void PrologueScene::completedAnimationSequenceNamed(const char *name)
         }
         else
         {
+            // TODO チュートリアルを作成後切り替える;
+            auto scene = TitleScene::createScene();
+            // 0.5秒かけてブラックアウトしてシーンを切り替える
+            auto fade = TransitionFade::create(0.5f, scene, Color3B::BLACK);
+            Director::getInstance()->replaceScene(fade);
         }
     }
 }

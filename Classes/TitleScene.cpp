@@ -1,4 +1,4 @@
-#include "Voyager.h"
+#include "TitleScene.h"
 #include "CCBReader/CCBReader.h"
 #include "CCBReader/CCNodeLoaderLibrary.h"
 #include "SimpleAudioEngine.h"
@@ -9,13 +9,13 @@ USING_NS_CC_EXT;
 USING_NS_CC;
 using namespace CocosDenshion;
 
-Scene* Opening::createScene()
+Scene* TitleScene::createScene()
 {
     // 'scene' is an autorelease object
     auto scene = Scene::create();
     
     // 'layer' is an autorelease object
-    auto layer = Opening::create();
+    auto layer = TitleScene::create();
 
     // add layer as a child to scene
     scene->addChild(layer);
@@ -25,7 +25,7 @@ Scene* Opening::createScene()
 }
 
 // on "init" you need to initialize your instance
-bool Opening::init()
+bool TitleScene::init()
 {
     //////////////////////////////
     // 1. super init first
@@ -45,7 +45,7 @@ bool Opening::init()
     auto buttonItem = MenuItemImage::create(
                                            "btn-map.png",
                                            "btn-map.png",
-                                           CC_CALLBACK_1(Opening::menuCloseCallback, this));
+                                           CC_CALLBACK_1(TitleScene::menuCloseCallback, this));
     
 	buttonItem->setPosition(Point(origin.x + visibleSize.width/2,
                                 origin.y + visibleSize.height/2));
@@ -61,7 +61,7 @@ bool Opening::init()
     // add a label shows "Voyager"
     // create and initialize a label
     
-    auto label = LabelTTF::create("This is Opening Scene of VoY∀GeR", "Arial", 24);
+    auto label = LabelTTF::create("This is TitleScene Scene of VoY∀GeR", "Arial", 24);
     label->setPosition(Point(origin.x + visibleSize.width/2,
                             origin.y + visibleSize.height - label->getContentSize().height - 50));
     this->addChild(label, 1);
@@ -93,13 +93,16 @@ bool Opening::init()
 }
 
 
-void Opening::menuCloseCallback(Object* pSender)
+void TitleScene::menuCloseCallback(Object* pSender)
 {
     Director::getInstance()->end();
-    CCLOG("TitleScene::onTouchBegan()");
+    //TODO メインシーンの作成
+    log("TitleScene::onTouchBegan()");
     auto scene = PrologueScene::createScene();
     log("transition to prologue scene");
-    // 0.5秒かけてブラックアウトしてプロローグに移動する
-    auto fade = TransitionFade::create(5, scene, Color3B::BLACK);
-    Director::getInstance()->replaceScene(fade);
+    // 0.5秒かけてブラックアウトして次のシーンへ移動する
+    //auto fade = TransitionFade::create(0.5f, scene, Color3B::BLACK);
+    //log("transition to prologue scene");
+    Director::getInstance()->replaceScene(scene);
+    log("transition to prologue scene");
 }
