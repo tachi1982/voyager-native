@@ -10,6 +10,7 @@
 #define Voyager_MainScene_h
 
 #include "cocos2d.h"
+#include "cocos-ext.h"
 
 class MainScene : public cocos2d::Layer
 {

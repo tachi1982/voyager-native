@@ -85,6 +85,7 @@
 		F294861A185480E600B98363 /* btn-start-game-down.png in Resources */ = {isa = PBXBuildFile; fileRef = F2948619185480E600B98363 /* btn-start-game-down.png */; };
 		F294861D1854817E00B98363 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F294861C1854817D00B98363 /* MainScene.cpp */; };
 		F294861F1854868B00B98363 /* btn-ask.png in Resources */ = {isa = PBXBuildFile; fileRef = F294861E1854868B00B98363 /* btn-ask.png */; };
+		F294862B1854B79C00B98363 /* bg-textfield.png in Resources */ = {isa = PBXBuildFile; fileRef = F294862A1854B79C00B98363 /* bg-textfield.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -329,6 +330,7 @@
 		F294861B1854816F00B98363 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainScene.h; path = ../Classes/MainScene.h; sourceTree = "<group>"; };
 		F294861C1854817D00B98363 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainScene.cpp; path = ../Classes/MainScene.cpp; sourceTree = "<group>"; };
 		F294861E1854868B00B98363 /* btn-ask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-ask.png"; sourceTree = "<group>"; };
+		F294862A1854B79C00B98363 /* bg-textfield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-textfield.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -553,6 +555,7 @@
 		F266333518371FC700C1231A /* img */ = {
 			isa = PBXGroup;
 			children = (
+				F294862A1854B79C00B98363 /* bg-textfield.png */,
 				F294861E1854868B00B98363 /* btn-ask.png */,
 				F2948619185480E600B98363 /* btn-start-game-down.png */,
 				F294861718547E7300B98363 /* btn-start-game.png */,
@@ -769,6 +772,7 @@
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				F294861F1854868B00B98363 /* btn-ask.png in Resources */,
 				F266334418371FC700C1231A /* btn-memory.png in Resources */,
+				F294862B1854B79C00B98363 /* bg-textfield.png in Resources */,
 				F266334518371FC700C1231A /* chara-voyager-good.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,

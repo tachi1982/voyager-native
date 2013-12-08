@@ -11,8 +11,8 @@
 #include "CCBReader/CCNodeLoaderLibrary.h"
 #include "SimpleAudioEngine.h"
 
-USING_NS_CC_EXT;
 USING_NS_CC;
+USING_NS_CC_EXT;
 using namespace CocosDenshion;
 
 Scene* MainScene::createScene()
@@ -76,7 +76,24 @@ bool MainScene::init()
     positionlabel->setPosition(Point(origin.x + visibleSize.width/4*3,
                              origin.y + visibleSize.height - label->getContentSize().height - 50));
     this->addChild(positionlabel, 1);
-    
+    auto editBoxSize = Size(320, 50);
+    auto m_pEditTest = EditBox::create(editBoxSize, Scale9Sprite::create(("bg-textfield.png")));
+    m_pEditTest->setFontSize(10);
+    m_pEditTest->setFontColor(ccBLACK);
+    m_pEditTest->setPlaceholderFontColor(ccWHITE);
+    m_pEditTest->setPlaceHolder("テキスト入力欄");
+    m_pEditTest->setMaxLength(8);
+    m_pEditTest->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    m_pEditTest->setInputMode(kEditBoxInputModeAny);
+    // add the sprite as a child to this layer
+    m_pEditTest->setReturnType(kKeyboardReturnTypeDone);
+    this->addChild(m_pEditTest, 10);
+  /*
+    auto textFieldSize = Size(320, 50);
+    auto textField = CCTextFieldTTF::textFieldWithPlaceHolder("テキスト入力欄",textFieldSize,kCCTextAlignmentLeft,"Thonburi",24);
+    textField->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    this->addChild(textField, 10);
+   */
     // add "Background splash screen"
     auto bgSprite = Sprite::create("bg-portrait.png");
     bgSprite->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
