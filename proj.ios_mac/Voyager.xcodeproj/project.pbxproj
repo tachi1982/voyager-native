@@ -81,6 +81,10 @@
 		F266334818371FC700C1231A /* ic.png in Resources */ = {isa = PBXBuildFile; fileRef = F266333E18371FC700C1231A /* ic.png */; };
 		F266334918371FC700C1231A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F266333F18371FC700C1231A /* logo.png */; };
 		F266334B183728D800C1231A /* bg-portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = F266334A183728D800C1231A /* bg-portrait.png */; };
+		F294861818547E7300B98363 /* btn-start-game.png in Resources */ = {isa = PBXBuildFile; fileRef = F294861718547E7300B98363 /* btn-start-game.png */; };
+		F294861A185480E600B98363 /* btn-start-game-down.png in Resources */ = {isa = PBXBuildFile; fileRef = F2948619185480E600B98363 /* btn-start-game-down.png */; };
+		F294861D1854817E00B98363 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F294861C1854817D00B98363 /* MainScene.cpp */; };
+		F294861F1854868B00B98363 /* btn-ask.png in Resources */ = {isa = PBXBuildFile; fileRef = F294861E1854868B00B98363 /* btn-ask.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -320,6 +324,11 @@
 		F266333E18371FC700C1231A /* ic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic.png; sourceTree = "<group>"; };
 		F266333F18371FC700C1231A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		F266334A183728D800C1231A /* bg-portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-portrait.png"; sourceTree = "<group>"; };
+		F294861718547E7300B98363 /* btn-start-game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-start-game.png"; sourceTree = "<group>"; };
+		F2948619185480E600B98363 /* btn-start-game-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-start-game-down.png"; sourceTree = "<group>"; };
+		F294861B1854816F00B98363 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainScene.h; path = ../Classes/MainScene.h; sourceTree = "<group>"; };
+		F294861C1854817D00B98363 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainScene.cpp; path = ../Classes/MainScene.cpp; sourceTree = "<group>"; };
+		F294861E1854868B00B98363 /* btn-ask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-ask.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,6 +401,8 @@
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				1AFAF8B516D35DE700DB1158 /* TitleScene.cpp */,
+				F294861B1854816F00B98363 /* MainScene.h */,
+				F294861C1854817D00B98363 /* MainScene.cpp */,
 				1AFAF8B616D35DE700DB1158 /* TitleScene.h */,
 				F254DE611845071800D4E384 /* PrologueScene.h */,
 				F254DE681845078E00D4E384 /* PrologueScene.cpp */,
@@ -542,6 +553,9 @@
 		F266333518371FC700C1231A /* img */ = {
 			isa = PBXGroup;
 			children = (
+				F294861E1854868B00B98363 /* btn-ask.png */,
+				F2948619185480E600B98363 /* btn-start-game-down.png */,
+				F294861718547E7300B98363 /* btn-start-game.png */,
 				F266334A183728D800C1231A /* bg-portrait.png */,
 				F266333618371FC700C1231A /* bg-foot.png */,
 				F266333718371FC700C1231A /* bg-head.png */,
@@ -753,6 +767,7 @@
 				F266334318371FC700C1231A /* btn-map.png in Resources */,
 				F205F6C11847B095004AB580 /* PrologueScene.ccbi in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
+				F294861F1854868B00B98363 /* btn-ask.png in Resources */,
 				F266334418371FC700C1231A /* btn-memory.png in Resources */,
 				F266334518371FC700C1231A /* chara-voyager-good.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
@@ -760,6 +775,7 @@
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				F266334818371FC700C1231A /* ic.png in Resources */,
+				F294861818547E7300B98363 /* btn-start-game.png in Resources */,
 				F266334218371FC700C1231A /* bg-star.png in Resources */,
 				F266334618371FC700C1231A /* chara-voyager-sad.png in Resources */,
 				F205F6BF1847B06B004AB580 /* line_side_slim.png in Resources */,
@@ -769,6 +785,7 @@
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				F266334918371FC700C1231A /* logo.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
+				F294861A185480E600B98363 /* btn-start-game-down.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				F266334718371FC700C1231A /* chara-voyager.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
@@ -804,6 +821,7 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
+				F294861D1854817E00B98363 /* MainScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				1AFAF8B816D35DE700DB1158 /* TitleScene.cpp in Sources */,
 			);

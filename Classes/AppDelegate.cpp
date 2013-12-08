@@ -1,6 +1,7 @@
 #include "AppDelegate.h"
 #include "TitleScene.h"
 #include "PrologueScene.h"
+#include "MainScene.h"
 
 USING_NS_CC;
 
@@ -26,7 +27,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    auto scene = PrologueScene::createScene();
+    //debug
+    auto scene = MainScene::createScene();
+    //auto scene = PrologueScene::createScene();
+    //auto scene = TitleScene::createScene();
 
     // run
     director->runWithScene(scene);
